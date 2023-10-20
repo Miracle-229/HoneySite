@@ -3,13 +3,13 @@ import { getAnalytics } from 'firebase/analytics';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyA1SzN-5YTASSW4x3JagT4n-swp6V71MRE',
-  authDomain: 'honeysite-65472.firebaseapp.com',
-  projectId: 'honeysite-65472',
-  storageBucket: 'honeysite-65472.appspot.com',
-  messagingSenderId: '844696528488',
-  appId: '1:844696528488:web:9ea311ebdd9dfd1f273ddd',
-  measurementId: 'G-12FZK7SQW8',
+  apiKey: 'AIzaSyAI16v3nURQlk6d3roPfpTMZOE3FBXzriI',
+  authDomain: 'testhoney-1ff5e.firebaseapp.com',
+  projectId: 'testhoney-1ff5e',
+  storageBucket: 'testhoney-1ff5e.appspot.com',
+  messagingSenderId: '943169085115',
+  appId: '1:943169085115:web:b1839f3daf42903fdc939e',
+  measurementId: 'G-H1RJHHKD9Z',
 };
 
 // Initialize Firebase
