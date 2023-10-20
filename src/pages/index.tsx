@@ -2,11 +2,11 @@ import React, { useId } from 'react';
 import Image from 'next/image';
 import { collection, getDocs } from 'firebase/firestore';
 import style from '@/styles/Home.module.scss';
-import { IProduct } from '@/types/product';
 import Layout from '@/layouts/Layout';
+import { IProductHome } from '@/types/product';
 import { db } from '../api/firebase-config';
 
-export default function Home({ products }: { products: IProduct[] }) {
+export default function Home({ products }: { products: IProductHome[] }) {
   const id = useId();
   return (
     <Layout title="Bee Man">
@@ -33,7 +33,7 @@ export default function Home({ products }: { products: IProduct[] }) {
       <div className={style.products}>
         <h2>Популярные продукты</h2>
         <div className={style.home_row_products}>
-          {products.map((product: IProduct) => (
+          {products.map((product: IProductHome) => (
             <div className={style.home_box_product} key={id}>
               <div className={style.home_img_product}>
                 <Image
@@ -60,7 +60,7 @@ export async function getServerSideProps() {
   const productsCollectionRef = collection(db, 'Products');
   const data = await getDocs(productsCollectionRef);
   const products = data.docs.map(
-    (doc) => ({ ...doc.data(), id: doc.id }) as IProduct
+    (doc) => ({ ...doc.data(), id: doc.id }) as IProductHome
   );
   return {
     props: {

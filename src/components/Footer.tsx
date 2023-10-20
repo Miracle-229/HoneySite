@@ -1,11 +1,9 @@
 import Image from 'next/image';
 import React from 'react';
-import style from './Footer.module.scss';
 import Link from 'next/link';
+import style from './Footer.module.scss';
 
-type Props = {};
-
-const Footer = (props: Props) => {
+function Footer() {
   return (
     <div className={style.footer}>
       <div className={style.logo}>
@@ -29,6 +27,6 @@ const Footer = (props: Props) => {
       </Link>
     </div>
   );
-};
+}
 
 export default Footer;

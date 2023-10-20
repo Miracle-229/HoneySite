@@ -6,13 +6,15 @@ import style from './Header.module.scss';
 function Header() {
   return (
     <div className={style.header}>
-      <Image
-        className={style.logo}
-        src="/honeylogo.png"
-        width={60}
-        height={65}
-        alt="bee-man"
-      />
+      <Link href="/">
+        <Image
+          className={style.logo}
+          src="/honeylogo.png"
+          width={60}
+          height={65}
+          alt="bee-man"
+        />
+      </Link>
       <div className={style.list}>
         <ul>
           <Link href="/products">
