@@ -1,11 +1,9 @@
 import React from 'react';
-import style from './Header.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import style from './Header.module.scss';
 
-type Props = {};
-
-const Header = (props: Props) => {
+function Header() {
   return (
     <div className={style.header}>
       <Image
@@ -17,24 +15,24 @@ const Header = (props: Props) => {
       />
       <div className={style.list}>
         <ul>
-          <Link href="#">
+          <Link href="/products">
             <li>Продукты</li>
           </Link>
-          <Link href="#">
+          <Link href="/#">
             <li>О нас</li>
           </Link>
-          <Link href="#">
+          <Link href="/#">
             <li>Галерея</li>
           </Link>
         </ul>
       </div>
       <div>
-        <Link className={style.login} href="#">
+        <Link className={style.login} href="/#">
           Вход
         </Link>
       </div>
     </div>
   );
-};
+}
 
 export default Header;
