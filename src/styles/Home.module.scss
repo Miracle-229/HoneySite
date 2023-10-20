@@ -1,0 +1,116 @@
+.main {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  margin-top: 65px;
+  padding-bottom: 100px;
+  padding-left: 110px;
+  box-shadow: 0px -28px 26px -13px rgba(34, 60, 80, 0.16) inset;
+}
+.home_img_major {
+  height: 400px;
+  width: 430px;
+  position: relative;
+}
+.home_box_major {
+  display: inline-block;
+  justify-self: end;
+  border: 25px solid #ffb800;
+  padding: 20px 20px 15px 20px;
+}
+.home_text_major {
+  h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 400;
+  }
+  pre {
+    margin-top: 40px;
+    overflow: auto; /* Добавьте прокрутку при необходимости */
+    max-height: 200px; /* Задайте максимальную высоту, которая подходит вам */
+    white-space: pre-wrap;
+    font-size: 24px;
+  }
+}
+.products {
+  margin-top: 60px;
+  h2 {
+    font-size: 36px;
+    text-align: center;
+    font-weight: 400;
+  }
+}
+.home_row_products {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+.home_box_product {
+  border: 10px solid #ffb800;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.7s;
+  h3 {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  &:hover {
+    filter: drop-shadow(-6px 7px 4px #00000063);
+    transition: 0.7s;
+    cursor: pointer;
+  }
+}
+.home_img_product {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  img {
+    filter: drop-shadow(-6px 7px 4px #00000063);
+  }
+}
+.button_product {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  margin-top: 15px;
+  padding: 10px 30px;
+  border-radius: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr; /* Одна колонка на узких экранах */
+    grid-template-rows: auto auto;
+    padding-left: 10px; /* Переключаемся на строки */
+  }
+
+  .home_box_major {
+    grid-row: 1; /* Размещаем home_box_major в первой строке */
+    grid-column: 1; /* Размещаем home_box_major в первой колонке */
+    justify-self: center;
+    border: 20px solid #ffb800; /* Изменяем выравнивание */
+  }
+
+  .home_text_major {
+    grid-row: 2; /* Размещаем home_text_major во второй строке */
+    grid-column: 1; /* Размещаем home_text_major в первой колонке */
+  }
+}
+@media screen and (max-width: 600px) {
+  .main {
+    margin-top: 25px;
+  }
+  .home_img_major {
+    width: 330px;
+    height: 300px;
+  }
+  .home_box_major {
+    border: 15px solid #ffb800;
+  }
+}
