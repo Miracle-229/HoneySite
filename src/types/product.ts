@@ -17,6 +17,7 @@ export type IProductSell = {
 
 export type IProductImage = {
   id: string;
+  img: string;
   images: {
     img: string;
   }[];
