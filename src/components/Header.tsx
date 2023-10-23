@@ -23,7 +23,7 @@ function Header() {
           <Link href="/#">
             <li>О нас</li>
           </Link>
-          <Link href="/#">
+          <Link href="/gallery">
             <li>Галерея</li>
           </Link>
         </ul>
