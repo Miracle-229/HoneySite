@@ -14,3 +14,10 @@ export type IProductSell = {
     name: string;
   }[];
 };
+
+export type IProductImage = {
+  id: string;
+  images: {
+    img: string;
+  }[];
+};
