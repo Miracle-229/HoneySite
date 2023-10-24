@@ -25,14 +25,15 @@
   }
   pre {
     margin-top: 40px;
-    overflow: auto; /* Добавьте прокрутку при необходимости */
-    max-height: 200px; /* Задайте максимальную высоту, которая подходит вам */
+    overflow: auto;
+    max-height: 200px;
     white-space: pre-wrap;
     font-size: 24px;
   }
 }
 .products {
   margin-top: 60px;
+  padding-bottom: 125px;
   h2 {
     font-size: 36px;
     text-align: center;
