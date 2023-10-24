@@ -20,7 +20,7 @@ function Header() {
           <Link href="/products">
             <li>Продукты</li>
           </Link>
-          <Link href="/#">
+          <Link href="/about">
             <li>О нас</li>
           </Link>
           <Link href="/gallery">
