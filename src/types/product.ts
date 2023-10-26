@@ -1,16 +1,18 @@
 export type IProductHome = {
-  id: string;
+  id?: string;
   name: string;
-  price: string;
+  price: number;
   img: string;
+  count?: number;
 };
+
 export type IProductSell = {
   id: string;
   rawname: string;
   products: {
     id: string;
     img: string;
-    price: string;
+    price: number;
     name: string;
   }[];
 };
