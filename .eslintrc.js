@@ -32,4 +32,12 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['/src/api/firebase-config.js'],
+      rules: {
+        'import/prefer-default-export': 'off', // Отключение правила для данного файла
+      },
+    },
+  ],
 };
