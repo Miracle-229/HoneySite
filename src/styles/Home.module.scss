@@ -64,7 +64,6 @@
   &:hover {
     filter: drop-shadow(-6px 7px 4px #00000063);
     transition: 0.7s;
-    cursor: pointer;
   }
 }
 .home_img_product {
@@ -82,6 +81,16 @@
   margin-top: 15px;
   padding: 10px 30px;
   border-radius: 30px;
+  cursor: pointer;
+}
+.button_product_bought {
+  background-color: #ffb800;
+  color: white;
+  font-size: 20px;
+  margin-top: 15px;
+  padding: 10px 30px;
+  border-radius: 30px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
