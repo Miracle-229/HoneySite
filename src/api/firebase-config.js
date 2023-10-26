@@ -1,15 +1,14 @@
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAI16v3nURQlk6d3roPfpTMZOE3FBXzriI',
-  authDomain: 'testhoney-1ff5e.firebaseapp.com',
-  projectId: 'testhoney-1ff5e',
-  storageBucket: 'testhoney-1ff5e.appspot.com',
-  messagingSenderId: '943169085115',
-  appId: '1:943169085115:web:b1839f3daf42903fdc939e',
-  measurementId: 'G-H1RJHHKD9Z',
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID,
 };
 
 // Initialize Firebase
