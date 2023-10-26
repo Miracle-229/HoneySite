@@ -1,12 +1,42 @@
-import React, { useId } from 'react';
+import React, { useId, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { collection, getDocs } from 'firebase/firestore';
 import style from '@/styles/Home.module.scss';
 import Layout from '@/layouts/Layout';
 import { IProductHome } from '@/types/product';
+import Link from 'next/link';
 import { db } from '../api/firebase-config';
+import { useCart } from '../context/useCart';
 
 export default function Home({ products }: { products: IProductHome[] }) {
+  const [cart, setCart] = useState<IProductHome[]>([]);
+  const { cartCount, setCartCount } = useCart();
+
+  useEffect(() => {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+      setCart(JSON.parse(savedCart));
+    }
+  }, []);
+
+  const addToCart = (product: IProductHome) => {
+    const updatedCart = [...cart];
+    const existingProductIndex = updatedCart.findIndex(
+      (p) => p.name === product.name
+    );
+
+    if (existingProductIndex !== -1) {
+      if (updatedCart[existingProductIndex].count !== undefined) {
+        updatedCart[existingProductIndex].count! += 1;
+      }
+    } else {
+      updatedCart.push({ ...product, count: 1 });
+    }
+    setCartCount(cartCount + 1);
+    setCart(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+  };
+
   const id = useId();
   return (
     <Layout title="Bee Man">
@@ -45,9 +75,19 @@ export default function Home({ products }: { products: IProductHome[] }) {
               </div>
               <h3>{product.name}</h3>
               <h4>{product.price}</h4>
-              <button type="submit" className={style.button_product}>
-                Купить
-              </button>
+              {cart.some((p) => p.name === product.name) ? (
+                <Link href="/cart" className={style.button_product_bought}>
+                  В корзине
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  className={style.button_product}
+                  onClick={() => addToCart(product)}
+                >
+                  Купить
+                </button>
+              )}
             </div>
           ))}
         </div>
