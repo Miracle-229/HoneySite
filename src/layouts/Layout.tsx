@@ -4,11 +4,11 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 type Props = {
-  children?: ReactNode;
+  children: ReactNode;
   title: string;
 };
 
-const Layout = ({ children, title }: Props) => {
+function Layout({ children, title }: Props) {
   return (
     <>
       <Head>
@@ -21,6 +21,6 @@ const Layout = ({ children, title }: Props) => {
       <Footer />
     </>
   );
-};
+}
 
 export default Layout;

@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { BsFillCartFill } from 'react-icons/bs';
 import style from './Header.module.scss';
+import { useCart } from '@/context/useCart';
 
 function Header() {
+  const { cartCount } = useCart();
+
+
   return (
     <div className={style.header}>
       <Link href="/">
@@ -29,8 +34,13 @@ function Header() {
         </ul>
       </div>
       <div>
-        <Link className={style.login} href="/#">
-          Вход
+        <Link className={style.cart} href="/cart">
+          <div>
+            <BsFillCartFill />
+            {cartCount > 0 && (
+              <span className={style.cart_items}>{cartCount}</span>
+            )}
+          </div>
         </Link>
       </div>
     </div>
