@@ -33,7 +33,6 @@ function Cart() {
       products: cart
     };
 
-    // Выполните POST-запрос на сервер
     fetch('http://localhost:8000/submitOrder', {
       method: 'POST',
       headers: {
@@ -43,7 +42,6 @@ function Cart() {
     })
       .then((response) => {
         if (response.ok) {
-          // Здесь вы можете обработать успешный ответ от сервера (например, закрыть модальное окно)
           setModalOpen(false);
           localStorage.removeItem('cart');
           localStorage.removeItem('totalFinalPrice');
@@ -52,7 +50,7 @@ function Cart() {
             window.location.reload();
           }, 500);
         } else {
-          // Обработка ошибок, если не удалось отправить данные на сервер
+          
           console.error('Ошибка при отправке заказа на сервер');
         }
       })
@@ -101,7 +99,6 @@ function Cart() {
 
     setTotalFinalPrice(updatedTotalFinalPrice);
 
-    // Сохранение в localStorage на стороне клиента
     localStorage.setItem('totalfinalPrice', updatedTotalFinalPrice.toString());
   }, [cart]);
 
