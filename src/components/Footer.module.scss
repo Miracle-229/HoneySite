@@ -1,0 +1,23 @@
+.footer {
+  height: 155px;
+  background-color: #ffb800;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 80px;
+  h3{
+    font-size: 40px;
+    color: white;
+    font-weight: 100;
+  }
+}
+.logo {
+  height: 120px;
+  width: 95px;
+  position: relative;
+}
+.kufar_logo{
+    height: 90px;
+    width: 65px;
+    position: relative;
+}
